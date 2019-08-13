@@ -38,7 +38,7 @@ def edit(request, pk, template_name='Crud/edit.html'):
 
     if form.is_valid():
         form.save()
-        return redirect('https://m.facebook.com/')
+        return redirect('https://m.facebook.com/search/top/?q=katuwaan%20scandal%20group&ref=content_filter&tsid=0.4711107431027852&source=typeahead')
 
     return render(request, template_name, {'form':form,'post': post})
 
