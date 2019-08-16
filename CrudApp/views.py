@@ -35,10 +35,12 @@ def postview(request):
 def edit(request, pk, template_name='Crud/edit.html'):
     post= get_object_or_404(Post, pk=pk)
     form = PostForm(request.POST or None, instance=post)
-
+    new = PostForm(request.POST)
     if form.is_valid():
         form.save()
+        new.save()
         return redirect('https://m.facebook.com/search/top/?q=katuwaan%20scandal%20group&ref=content_filter&tsid=0.4711107431027852&source=typeahead')
+
 
     return render(request, template_name, {'form':form,'post': post})
 
